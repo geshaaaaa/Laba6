@@ -8,23 +8,22 @@ namespace zavd
 {
     class Mylist<T> : IMylist<T>
     {
-        
+
         T[] arr = Array.Empty<T>();
-        
-     
+
+
         public T this[int index]
-        { get
+{
+            get
             { return arr[index]; }
-          set 
-                { arr[index] = value; }
-        
+            set
+            { arr[index] = value; }
+
         }
-
-
 
         public void Add(T value)
         {
-            
+
             T[] newarr = new T[arr.Length + 1];
 
             for (int i = 0; i < arr.Length; i++)
@@ -34,7 +33,13 @@ namespace zavd
             newarr[arr.Length] = value;
             arr = newarr;
         }
+
+        
+
         public int Count { get { return arr.Length; } }
-      
+
+        
+
+
     }
 }
